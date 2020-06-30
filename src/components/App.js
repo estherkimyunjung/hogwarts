@@ -6,20 +6,27 @@ import HogsContainer from './HogsContainer'
 class App extends Component {
 
   state = {
-    hogwarts: null
+    hogwarts: null,
+    isLoading: true
   }
 
   componentDidMount() {
     fetch('http://localhost:3001/hogs')
       .then(res => res.json())
-      .then(hogwarts => this.setState({hogwarts: hogwarts}))
+      .then(hogwarts => this.setState({
+        hogwarts: hogwarts,
+        isLoading: false
+      }))
   }
 
   render() {
     return (
       <div className="App">
           < Nav />
-          < HogsContainer hogwarts={this.state.hogwarts}/>
+          {this.state.isLoading
+            ? <h4>Loading ... </h4>
+            : < HogsContainer hogwarts={this.state.hogwarts}/> 
+          }
       </div>
     )
   }
