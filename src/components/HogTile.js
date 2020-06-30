@@ -27,7 +27,9 @@ export default class HogTile extends Component {
     if(this.state.detail === true){
       return (
         <section style={{border: 'solid blue', margin: '10px', padding: '10px', display: 'inline-block'}}>
-          <div className="hogTile" onClick={() => this.detailHog(this.props.hog.id)} style={{display:(this.state.display ? null : 'none')}}>
+          <div className="hogTile" 
+          onClick={() => this.detailHog(this.props.hog.id)} 
+          style={{display:(this.state.display ? null : 'none')}}>
             <h3 style={{color: "green"}}> {this.props.hog.name}</h3>
             <div className="content">
               <img src={this.props.hog.image} alt="" />
@@ -45,7 +47,9 @@ export default class HogTile extends Component {
     } else {
       return (
         <section style={{border: 'solid blue', margin: '10px', padding: '10px', display: 'inline-block'}}>
-          <div className="hogTile" onClick={() => this.detailHog(this.props.hog.id)} style={{display:(this.state.display ? null : 'none')}}>
+          <div className="hogTile" 
+          onClick={() => this.detailHog(this.props.hog.id)} 
+          style={{display:(this.state.display ? null : 'none')}}>
             <h3 style={{color: "green"}}> {this.props.hog.name}</h3>
             <div className="content">
               <img src={this.props.hog.image} alt="" />
